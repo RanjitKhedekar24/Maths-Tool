@@ -21,6 +21,9 @@
                 <button class="nav-button" onclick="showSection('calculators')">
                     <i class="fas fa-calculator"></i>Calculators
                 </button>
+                <button class="nav-button" onclick="showSection('assignments')">
+                    <i class="fas fa-tasks"></i>Assignments
+                </button>
                 <button class="nav-button" onclick="showSection('tables2to10')">
                     <i class="fas fa-table"></i>Tables 2-10
                 </button>
@@ -632,6 +635,100 @@
                 <p>A comprehensive mathematical learning platform</p>
                 <p>Version 1.0</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Add new Assignments Section before the Home Section -->
+    <div id="assignments" class="content-section">
+        <div class="assignments-container">
+            <h2>Math Assignments</h2>
+            
+            <!-- Assignment Selection -->
+            <div class="assignment-controls">
+                <select id="assignmentSet" onchange="loadAssignment()">
+                    <option value="">Select Question Paper Set</option>
+                    <option value="set1">Set 1 - Basic Arithmetic</option>
+                    <option value="set2">Set 2 - Multiplication Tables</option>
+                    <option value="set3">Set 3 - Square & Cube</option>
+                    <option value="set4">Set 4 - Word Problems</option>
+                    <option value="set5">Set 5 - Mixed Operations</option>
+                    <option value="set6">Set 6 - Mental Math</option>
+                    <option value="set7">Set 7 - Decimal Operations</option>
+                    <option value="set8">Set 8 - Fraction Problems</option>
+                    <option value="set9">Set 9 - Geometry Basics</option>
+                    <option value="set10">Set 10 - Challenge Questions</option>
+                </select>
+                <button onclick="startAssignment()" class="start-btn">Start Assignment</button>
+            </div>
+
+            <!-- Timer and Progress -->
+            <div class="assignment-status">
+                <div class="timer" id="assignmentTimer">Time: 00:00</div>
+                <div class="progress">
+                    Questions: <span id="currentQuestion">0</span>/10
+                </div>
+            </div>
+
+            <!-- Question Display -->
+            <div id="questionContainer" class="question-container">
+                <div class="question-box">
+                    <p id="questionText">Select a question paper set to begin...</p>
+                    <div class="options" id="optionsContainer">
+                        <!-- Options will be dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsContainer" class="results-container" style="display: none;">
+                <h3>Assignment Results</h3>
+                <div class="score-display">
+                    <div class="score">Score: <span id="scoreValue">0</span>/10</div>
+                    <div class="percentage">Percentage: <span id="percentageValue">0</span>%</div>
+                    <div class="time-taken">Time Taken: <span id="timeTaken">0:00</span></div>
+                </div>
+                
+                <!-- Question Review -->
+                <div class="question-review">
+                    <h4>Question Review</h4>
+                    <div id="reviewContainer">
+                        <!-- Will be populated with question review -->
+                    </div>
+                </div>
+
+                <!-- Results Actions -->
+                <div class="result-actions">
+                    <button onclick="retryAssignment()" class="retry-btn">Try Again</button>
+                    <button onclick="shareResults()" class="share-btn">Share Results</button>
+                    <button onclick="downloadCertificate()" class="certificate-btn">Download Certificate</button>
+                </div>
+            </div>
+
+            <!-- Performance Analytics -->
+            <div class="analytics-section">
+                <h3>Performance Analytics</h3>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h4>Average Score</h4>
+                        <div id="avgScore">-</div>
+                    </div>
+                    <div class="analytics-card">
+                        <h4>Completed Assignments</h4>
+                        <div id="completedCount">0</div>
+                    </div>
+                    <div class="analytics-card">
+                        <h4>Best Score</h4>
+                        <div id="bestScore">-</div>
+                    </div>
+                    <div class="analytics-card">
+                        <h4>Time Spent</h4>
+                        <div id="totalTime">0 mins</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parent/Teacher View -->
+            
         </div>
     </div>
 </body>
