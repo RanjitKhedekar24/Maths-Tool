@@ -288,6 +288,9 @@
                 homeButton.style.backgroundColor = 'white';
                 homeButton.style.color = '#009879';
             }
+            
+            // Add this line at the end of the function
+            animateUserCount();
         }
 
         // Add event listener for page load and refresh
@@ -314,4 +317,24 @@
                 showHomePage();
             }
         });
+
+        // Simulated user count animation
+        function animateUserCount() {
+            const userCountElement = document.getElementById('userCount');
+            const targetCount = 2234; // You can change this to any number
+            let currentCount = 0;
+            const duration = 2000; // 2 seconds
+            const steps = 50;
+            const increment = targetCount / steps;
+            const stepDuration = duration / steps;
+
+            const counter = setInterval(() => {
+                currentCount = Math.min(currentCount + increment, targetCount);
+                userCountElement.textContent = Math.round(currentCount).toLocaleString();
+                
+                if (currentCount >= targetCount) {
+                    clearInterval(counter);
+                }
+            }, stepDuration);
+        }
     // </script>

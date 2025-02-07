@@ -158,12 +158,18 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
         }
 
         .stat-number {
             font-size: 2.5em;
             font-weight: bold;
             margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .how-it-works {
