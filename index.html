@@ -3,734 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Math Tools</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-container">
+    <!-- Keep your existing navbar but add Bootstrap classes -->
+    <div class="navbar navbar-expand-lg">
+        <div class="nav-container container">
             <div class="logo-section">
                 <i class="fas fa-square-root-alt"></i>
                 <span>Math Tools</span>
             </div>
             <div class="nav-links">
-                <button class="nav-button" onclick="showSection('home')">
+                <button class="nav-button btn" onclick="showSection('home')">
                     <i class="fas fa-home"></i>Home
                 </button>
-                <button class="nav-button" onclick="showSection('calculators')">
+                <button class="nav-button btn" onclick="showSection('calculators')">
                     <i class="fas fa-calculator"></i>Calculators
                 </button>
-                <button class="nav-button" onclick="showSection('assignments')">
+                <button class="nav-button btn" onclick="showSection('assignments')">
                     <i class="fas fa-tasks"></i>Assignments
                 </button>
-                <button class="nav-button" onclick="showSection('tables2to10')">
+                <button class="nav-button btn" onclick="showSection('tables2to10')">
                     <i class="fas fa-table"></i>Tables 2-10
                 </button>
-                <button class="nav-button" onclick="showSection('tables11to20')">
+                <button class="nav-button btn" onclick="showSection('tables11to20')">
                     <i class="fas fa-table"></i>Tables 11-20
                 </button>
-                <button class="nav-button" onclick="showSection('tables21to30')">
+                <button class="nav-button btn" onclick="showSection('tables21to30')">
                     <i class="fas fa-table"></i>Tables 21-30
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Add these sections after the navbar -->
-    <div class="user-selection">
-        <button class="user-type-btn active" onclick="switchUserType('student')">
-            <i class="fas fa-user-graduate"></i>
-            Student
-        </button>
-        <button class="user-type-btn" onclick="switchUserType('parent')">
-            <i class="fas fa-user-friends"></i>
-            Parent
-        </button>
-        <button class="user-type-btn" onclick="switchUserType('teacher')">
-            <i class="fas fa-chalkboard-teacher"></i>
-            Teacher
-        </button>
-    </div>
+    <!-- Add Bootstrap container -->
+    <div class="container mt-4">
+        <!-- Keep existing user selection but add Bootstrap classes -->
+        <div class="user-selection mb-4">
+            <button class="user-type-btn btn btn-outline-primary active" onclick="switchUserType('student')">
+                <i class="fas fa-user-graduate"></i>
+                Student
+            </button>
+            <button class="user-type-btn btn btn-outline-primary" onclick="switchUserType('parent')">
+                <i class="fas fa-user-friends"></i>
+                Parent
+            </button>
+            <button class="user-type-btn btn btn-outline-primary" onclick="switchUserType('teacher')">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Teacher
+            </button>
+        </div>
 
-    <!-- Add learning tips section -->
-    <div class="learning-tips">
-        <div class="tip-card">
-            <i class="fas fa-lightbulb"></i>
-            <h3>Quick Tip</h3>
-            <p id="currentTip">Practice multiplication tables for 10 minutes daily!</p>
+        <!-- Learning tips with Bootstrap card -->
+        <div class="learning-tips card mb-4">
+            <div class="card-body text-center">
+                <i class="fas fa-lightbulb text-warning"></i>
+                <h3 class="card-title">Quick Tip</h3>
+                <p class="card-text" id="currentTip">Practice multiplication tables for 10 minutes daily!</p>
+            </div>
+        </div>
+
+        <!-- Calculators Section -->
+        <div id="calculators" class="content-section active">
+            <div class="calculator-group">
+                <!-- Basic Arithmetic Calculator -->
+                <div class="calculator">
+                    <h3>Basic Arithmetic Calculator</h3>
+                    <div class="input-group">
+                        <input type="number" id="num1" placeholder="First number">
+                        <input type="number" id="num2" placeholder="Second number">
+                    </div>
+                    <div class="button-group">
+                        <button onclick="calculate('add')" class="operation-btn">+</button>
+                        <button onclick="calculate('subtract')" class="operation-btn">-</button>
+                        <button onclick="calculate('multiply')" class="operation-btn">×</button>
+                        <button onclick="calculate('divide')" class="operation-btn">÷</button>
+                    </div>
+                    <div id="basicResult" class="result-box"></div>
+                </div>
+
+                <!-- Multiplication Table Calculator -->
+                <div class="calculator">
+                    <h3>Table Generator</h3>
+                    <input type="number" id="numberInput" placeholder="Enter a number">
+                    <button onclick="generateTable()">Generate Table</button>
+                    <button onclick="clearCalculator()" style="background-color: #ff4444; margin-top: 10px;">Clear</button>
+                </div>
+
+                <!-- Square Calculator -->
+                <div class="calculator">
+                    <h3>Square Calculator</h3>
+                    <input type="number" id="squareInput" placeholder="Enter a number">
+                    <button onclick="calculateSquare()">Calculate Square</button>
+                    <div id="squareResult" class="result-box"></div>
+                </div>
+
+                <!-- Square Root Calcu lator -->
+                <div class="calculator">
+                    <h3>Square Root Calculator</h3>
+                    <input type="number" id="rootInput" placeholder="Enter a number">
+                    <button onclick="calculateRoot()">Calculate Square Root</button>
+                    <div id="rootResult" class="result-box"></div>
+                </div>
+
+                <!-- New Cube Calculator -->
+                <div class="calculator">
+                    <h3>Cube Calculator</h3>
+                    <input type="number" id="cubeInput" placeholder="Enter a number">
+                    <button onclick="calculateCube()">Calculate Cube</button>
+                    <div id="cubeResult" class="result-box"></div>
+                </div>
+
+                <!-- New Cube Root Calculator -->
+                <div class="calculator">
+                    <h3>Cube Root Calculator</h3>
+                    <input type="number" id="cubeRootInput" placeholder="Enter a number">
+                    <button onclick="calculateCubeRoot()">Calculate Cube Root</button>
+                    <div id="cubeRootResult" class="result-box"></div>
+                </div>
+            </div>
+            <table id="resultTable" border="1"></table>
+        </div>
+
+        <!-- Tables 2-10 Section -->
+        <div id="tables2to10" class="content-section">
+            <table border="1">
+                <tr>
+                  <th>2's Table</th>
+                  <th>3's Table</th>
+                  <th>4's Table</th>
+                  <th>5's Table</th>
+                  <th>6's Table</th>
+                  <th>7's Table</th>
+                  <th>8's Table</th>
+                  <th>9's Table</th>
+                  <th>10's Table</th>
+                </tr>
+                <tr>
+                  <td>2 x 1 = 2</td>
+                  <td>3 x 1 = 3</td>
+                  <td>4 x 1 = 4</td>
+                  <td>5 x 1 = 5</td>
+                  <td>6 x 1 = 6</td>
+                  <td>7 x 1 = 7</td>
+                  <td>8 x 1 = 8</td>
+                  <td>9 x 1 = 9</td>
+                  <td>10 x 1 = 10</td>
+                </tr>
+                <tr>
+                  <td>2 x 2 = 4</td>
+                  <td>3 x 2 = 6</td>
+                  <td>4 x 2 = 8</td>
+                  <td>5 x 2 = 10</td>
+                  <td>6 x 2 = 12</td>
+                  <td>7 x 2 = 14</td>
+                  <td>8 x 2 = 16</td>
+                  <td>9 x 2 = 18</td>
+                  <td>10 x 2 = 20</td>
+                </tr>
+                <tr>
+                  <td>2 x 3 = 6</td>
+                  <td>3 x 3 = 9</td>
+                  <td>4 x 3 = 12</td>
+                  <td>5 x 3 = 15</td>
+                  <td>6 x 3 = 18</td>
+                  <td>7 x 3 = 21</td>
+                  <td>8 x 3 = 24</td>
+                  <td>9 x 3 = 27</td>
+                  <td>10 x 3 = 30</td>
+                </tr>
+                <tr>
+                  <td>2 x 4 = 8</td>
+                  <td>3 x 4 = 12</td>
+                  <td>4 x 4 = 16</td>
+                  <td>5 x 4 = 20</td>
+                  <td>6 x 4 = 24</td>
+                  <td>7 x 4 = 28</td>
+                  <td>8 x 4 = 32</td>
+                  <td>9 x 4 = 36</td>
+                  <td>10 x 4 = 40</td>
+                </tr>
+                <tr>
+                  <td>2 x 5 = 10</td>
+                  <td>3 x 5 = 15</td>
+                  <td>4 x 5 = 20</td>
+                  <td>5 x 5 = 25</td>
+                  <td>6 x 5 = 30</td>
+                  <td>7 x 5 = 35</td>
+                  <td>8 x 5 = 40</td>
+                  <td>9 x 5 = 45</td>
+                  <td>10 x 5 = 50</td>
+                </tr>
+                <tr>
+                  <td>2 x 6 = 12</td>
+                  <td>3 x 6 = 18</td>
+                  <td>4 x 6 = 24</td>
+                  <td>5 x 6 = 30</td>
+                  <td>6 x 6 = 36</td>
+                  <td>7 x 6 = 42</td>
+                  <td>8 x 6 = 48</td>
+                  <td>9 x 6 = 54</td>
+                  <td>10 x 6 = 60</td>
+                </tr>
+                <tr>
+                  <td>2 x 7 = 14</td>
+                  <td>3 x 7 = 21</td>
+                  <td>4 x 7 = 28</td>
+                  <td>5 x 7 = 35</td>
+                  <td>6 x 7 = 42</td>
+                  <td>7 x 7 = 49</td>
+                  <td>8 x 7 = 56</td>
+                  <td>9 x 7 = 63</td>
+                  <td>10 x 7 = 70</td>
+                </tr>
+                <tr>
+                  <td>2 x 8 = 16</td>
+                  <td>3 x 8 = 24</td>
+                  <td>4 x 8 = 32</td>
+                  <td>5 x 8 = 40</td>
+                  <td>6 x 8 = 48</td>
+                  <td>7 x 8 = 56</td>
+                  <td>8 x 8 = 64</td>
+                  <td>9 x 8 = 72</td>
+                  <td>10 x 8 = 80</td>
+                </tr>
+                <tr>
+                  <td>2 x 9 = 18</td>
+                  <td>3 x 9 = 27</td>
+                  <td>4 x 9 = 36</td>
+                  <td>5 x 9 = 45</td>
+                  <td>6 x 9 = 54</td>
+                  <td>7 x 9 = 63</td>
+                  <td>8 x 9 = 72</td>
+                  <td>9 x 9 = 81</td>
+                  <td>10 x 9 = 90</td>
+                </tr>
+                <tr>
+                  <td>2 x 10 = 20</td>
+                  <td>3 x 10 = 30</td>
+                  <td>4 x 10 = 40</td>
+                  <td>5 x 10 = 50</td>
+                  <td>6 x 10 = 60</td>
+                  <td>7 x 10 = 70</td>
+                  <td>8 x 10 = 80</td>
+                  <td>9 x 10 = 90</td>
+                  <td>10 x 10 = 100</td>
+                </tr>
+              </table>
+        </div>
+
+        <!-- Tables 11-20 Section -->
+        <div id="tables11to20" class="content-section">
+            <table border="2">
+                <tr>
+                    <th>11's Table</th>
+                    <th>12's Table</th>
+                    <th>13's Table</th>
+                    <th>14's Table</th>
+                    <th>15's Table</th>
+                    <th>16's Table</th>
+                    <th>17's Table</th>
+                    <th>18's Table</th>
+                    <th>19's Table</th>
+                    <th>20's Table</th>
+                  </tr>
+                <tr>
+                  <td>11 x 1 = 11</td>
+                  <td>12 x 1 = 12</td>
+                  <td>13 x 1 = 13</td>
+                  <td>14 x 1 = 14</td>
+                  <td>15 x 1 = 15</td>
+                  <td>16 x 1 = 16</td>
+                  <td>17 x 1 = 17</td>
+                  <td>18 x 1 = 18</td>
+                  <td>19 x 1 = 19</td>
+                  <td>20 x 1 = 20</td>
+                </tr>
+                <tr>
+                  <td>11 x 2 = 22</td>
+                  <td>12 x 2 = 24</td>
+                  <td>13 x 2 = 26</td>
+                  <td>14 x 2 = 28</td>
+                  <td>15 x 2 = 30</td>
+                  <td>16 x 2 = 32</td>
+                  <td>17 x 2 = 34</td>
+                  <td>18 x 2 = 36</td>
+                  <td>19 x 2 = 38</td>
+                  <td>20 x 2 = 40</td>
+                </tr>
+                <tr>
+                  <td>11 x 3 = 33</td>
+                  <td>12 x 3 = 36</td>
+                  <td>13 x 3 = 39</td>
+                  <td>14 x 3 = 42</td>
+                  <td>15 x 3 = 45</td>
+                  <td>16 x 3 = 48</td>
+                  <td>17 x 3 = 51</td>
+                  <td>18 x 3 = 54</td>
+                  <td>19 x 3 = 57</td>
+                  <td>20 x 3 = 60</td>
+                </tr>
+                <tr>
+                  <td>11 x 4 = 44</td>
+                  <td>12 x 4 = 48</td>
+                  <td>13 x 4 = 52</td>
+                  <td>14 x 4 = 56</td>
+                  <td>15 x 4 = 60</td>
+                  <td>16 x 4 = 64</td>
+                  <td>17 x 4 = 68</td>
+                  <td>18 x 4 = 72</td>
+                  <td>19 x 4 = 76</td>
+                  <td>20 x 4 = 80</td>
+                </tr>
+                <tr>
+                  <td>11 x 5 = 55</td>
+                  <td>12 x 5 = 60</td>
+                  <td>13 x 5 = 65</td>
+                  <td>14 x 5 = 70</td>
+                  <td>15 x 5 = 75</td>
+                  <td>16 x 5 = 80</td>
+                  <td>17 x 5 = 85</td>
+                  <td>18 x 5 = 90</td>
+                  <td>19 x 5 = 95</td>
+                  <td>20 x 5 = 100</td>
+                </tr>
+                <tr>
+                  <td>11 x 6 = 66</td>
+                  <td>12 x 6 = 72</td>
+                  <td>13 x 6 = 78</td>
+                  <td>14 x 6 = 84</td>
+                  <td>15 x 6 = 90</td>
+                  <td>16 x 6 = 96</td>
+                  <td>17 x 6 = 102</td>
+                  <td>18 x 6 = 108</td>
+                  <td>19 x 6 = 114</td>
+                  <td>20 x 6 = 120</td>
+                </tr>
+                <tr>
+                  <td>11 x 7 = 77</td>
+                  <td>12 x 7 = 84</td>
+                  <td>13 x 7 = 91</td>
+                  <td>14 x 7 = 98</td>
+                  <td>15 x 7 = 105</td>
+                  <td>16 x 7 = 112</td>
+                  <td>17 x 7 = 119</td>
+                  <td>18 x 7 = 126</td>
+                  <td>19 x 7 = 133</td>
+                  <td>20 x 7 = 140</td>
+                </tr>
+                <tr>
+                  <td>11 x 8 = 88</td>
+                  <td>12 x 8 = 96</td>
+                  <td>13 x 8 = 104</td>
+                  <td>14 x 8 = 112</td>
+                  <td>15 x 8 = 120</td>
+                  <td>16 x 8 = 128</td>
+                  <td>17 x 8 = 136</td>
+                  <td>18 x 8 = 144</td>
+                  <td>19 x 8 = 152</td>
+                  <td>20 x 8 = 160</td>
+                </tr>
+                <tr>
+                  <td>11 x 9 = 99</td>
+                  <td>12 x 9 = 108</td>
+                  <td>13 x 9 = 117</td>
+                  <td>14 x 9 = 126</td>
+                  <td>15 x 9 = 135</td>
+                  <td>16 x 9 = 144</td>
+                  <td>17 x 9 = 153</td>
+                  <td>18 x 9 = 162</td>
+                  <td>19 x 9 = 171</td>
+                  <td>20 x 9 = 180</td>
+                </tr>
+                <tr>
+                  <td>11 x 10 = 110</td>
+                  <td>12 x 10 = 120</td>
+                  <td>13 x 10 = 130</td>
+                  <td>14 x 10 = 140</td>
+                  <td>15 x 10 = 150</td>
+                  <td>16 x 10 = 160</td>
+                  <td>17 x 10 = 170</td>
+                  <td>18 x 10 = 180</td>
+                  <td>19 x 10 = 190</td>
+                  <td>20 x 10 = 200</td>
+                </tr>
+              </table>
+        </div>
+
+        <!-- Tables 21-30 Section -->
+        <div id="tables21to30" class="content-section">
+            <table border="3">
+                <tr>
+                    <th>21's Table</th>
+                    <th>22's Table</th>
+                    <th>23's Table</th>
+                    <th>24's Table</th>
+                    <th>25's Table</th>
+                    <th>26's Table</th>
+                    <th>27's Table</th>
+                    <th>28's Table</th>
+                    <th>29's Table</th>
+                    <th>30's Table</th>
+                </tr>
+                <tr>
+                  <td>21 x 1 = 21</td>
+                  <td>22 x 1 = 22</td>
+                  <td>23 x 1 = 23</td>
+                  <td>24 x 1 = 24</td>
+                  <td>25 x 1 = 25</td>
+                  <td>26 x 1 = 26</td>
+                  <td>27 x 1 = 27</td>
+                  <td>28 x 1 = 28</td>
+                  <td>29 x 1 = 29</td>
+                  <td>30 x 1 = 30</td>
+                </tr>
+                <tr>
+                  <td>21 x 2 = 42</td>
+                  <td>22 x 2 = 44</td>
+                  <td>23 x 2 = 46</td>
+                  <td>24 x 2 = 48</td>
+                  <td>25 x 2 = 50</td>
+                  <td>26 x 2 = 52</td>
+                  <td>27 x 2 = 54</td>
+                  <td>28 x 2 = 56</td>
+                  <td>29 x 2 = 58</td>
+                  <td>30 x 2 = 60</td>
+                </tr>
+                <tr>
+                  <td>21 x 3 = 63</td>
+                  <td>22 x 3 = 66</td>
+                  <td>23 x 3 = 69</td>
+                  <td>24 x 3 = 72</td>
+                  <td>25 x 3 = 75</td>
+                  <td>26 x 3 = 78</td>
+                  <td>27 x 3 = 81</td>
+                  <td>28 x 3 = 84</td>
+                  <td>29 x 3 = 87</td>
+                  <td>30 x 3 = 90</td>
+                </tr>
+                <tr>
+                  <td>21 x 4 = 84</td>
+                  <td>22 x 4 = 88</td>
+                  <td>23 x 4 = 92</td>
+                  <td>24 x 4 = 96</td>
+                  <td>25 x 4 = 100</td>
+                  <td>26 x 4 = 104</td>
+                  <td>27 x 4 = 108</td>
+                  <td>28 x 4 = 112</td>
+                  <td>29 x 4 = 116</td>
+                  <td>30 x 4 = 120</td>
+                </tr>
+                <tr>
+                  <td>21 x 5 = 105</td>
+                  <td>22 x 5 = 110</td>
+                  <td>23 x 5 = 115</td>
+                  <td>24 x 5 = 120</td>
+                  <td>25 x 5 = 125</td>
+                  <td>26 x 5 = 130</td>
+                  <td>27 x 5 = 135</td>
+                  <td>28 x 5 = 140</td>
+                  <td>29 x 5 = 145</td>
+                  <td>30 x 5 = 150</td>
+                </tr>
+                <tr>
+                  <td>21 x 6 = 126</td>
+                  <td>22 x 6 = 132</td>
+                  <td>23 x 6 = 138</td>
+                  <td>24 x 6 = 144</td>
+                  <td>25 x 6 = 150</td>
+                  <td>26 x 6 = 156</td>
+                  <td>27 x 6 = 162</td>
+                  <td>28 x 6 = 168</td>
+                  <td>29 x 6 = 174</td>
+                  <td>30 x 6 = 180</td>
+                </tr>
+                <tr>
+                  <td>21 x 7 = 147</td>
+                  <td>22 x 7 = 154</td>
+                  <td>23 x 7 = 161</td>
+                  <td>24 x 7 = 168</td>
+                  <td>25 x 7 = 175</td>
+                  <td>26 x 7 = 182</td>
+                  <td>27 x 7 = 189</td>
+                  <td>28 x 7 = 196</td>
+                  <td>29 x 7 = 203</td>
+                  <td>30 x 7 = 210</td>
+                </tr>
+                <tr>
+                  <td>21 x 8 = 168</td>
+                  <td>22 x 8 = 176</td>
+                  <td>23 x 8 = 184</td>
+                  <td>24 x 8 = 192</td>
+                  <td>25 x 8 = 200</td>
+                  <td>26 x 8 = 208</td>
+                  <td>27 x 8 = 216</td>
+                  <td>28 x 8 = 224</td>
+                  <td>29 x 8 = 232</td>
+                  <td>30 x 8 = 240</td>
+                </tr>
+                <tr>
+                  <td>21 x 9 = 189</td>
+                  <td>22 x 9 = 198</td>
+                  <td>23 x 9 = 207</td>
+                  <td>24 x 9 = 216</td>
+                  <td>25 x 9 = 225</td>
+                  <td>26 x 9 = 234</td>
+                  <td>27 x 9 = 243</td>
+                  <td>28 x 9 = 252</td>
+                  <td>29 x 9 = 261</td>
+                  <td>30 x 9 = 270</td>
+                </tr>
+                <tr>
+                  <td>21 x 10 = 210</td>
+                  <td>22 x 10 = 220</td>
+                  <td>23 x 10 = 230</td>
+                  <td>24 x 10 = 240</td>
+                  <td>25 x 10 = 250</td>
+                  <td>26 x 10 = 260</td>
+                  <td>27 x 10 = 270</td>
+                  <td>28 x 10 = 280</td>
+                  <td>29 x 10 = 290</td>
+                  <td>30 x 10 = 300</td>
+                </tr>
+              </table>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home" class="content-section active">
+            <div class="home-section">
+                <h1 class="welcome-message">Welcome to Math Tools</h1>
+                <p class="subtitle">Your comprehensive mathematical companion for calculations and learning</p>
+
+                <!-- Stats Section -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <p>Multiplication Tables</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <p>Calculator Tools</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <p>Free Access</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="userCount">0</div>
+                        <p>Active Users</p>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧮</div>
+                        <h3>Smart Calculators</h3>
+                        <p>Access our suite of calculators including multiplication table generator, square calculator, and square root finder. Get instant, accurate results for all your mathematical needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Multiplication Tables</h3>
+                        <p>Explore comprehensive multiplication tables from 2 to 30, organized in easy-to-read sections. Perfect for learning and quick reference.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Interactive Learning</h3>
+                        <p>Engage with our interactive interface designed for both students and teachers. Practice multiplication, squares, and square roots with instant feedback.</p>
+                    </div>
+                </div>
+
+                <!-- How It Works Section -->
+                <div class="how-it-works">
+                    <h2>How It Works</h2>
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">Step 1</div>
+                            <h3>Choose Your Tool</h3>
+                            <p>Select from our range of calculators or multiplication tables based on your needs.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">Step 2</div>
+                            <h3>Enter Numbers</h3>
+                            <p>Input your numbers into the calculator or browse through our pre-generated tables.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">Step 3</div>
+                            <h3>Get Results</h3>
+                            <p>Receive instant, accurate results and calculations in a clear, easy-to-read format.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials Section -->
+                <div class="testimonials">
+                    <h2>What Our Users Say</h2>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"This tool has made teaching multiplication tables so much easier. My students love using it!"</p>
+                            <p class="testimonial-author">- Sarah, Math Teacher</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The calculators are fast and accurate. Perfect for checking my homework!"</p>
+                            <p class="testimonial-author">- Mike, Student</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"A great resource for both learning and teaching. The interface is very user-friendly."</p>
+                            <p class="testimonial-author">- John, Parent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Section -->
+                <div class="cta-section">
+                    <h2>Ready to Start Learning?</h2>
+                    <p>Try our calculators and explore multiplication tables now!</p>
+                    <button class="cta-button" onclick="showSection('calculators')">Get Started</button>
+                </div>
+
+                <!-- Quick Start Section -->
+                <div class="quick-start">
+                    <h2>Quick Access</h2>
+                    <div class="quick-links">
+                        <button class="quick-link-button" onclick="showSection('calculators')">Try Calculators</button>
+                        <button class="quick-link-button" onclick="showSection('tables2to10')">View Tables 2-10</button>
+                        <button class="quick-link-button" onclick="showSection('tables11to20')">View Tables 11-20</button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>© 2024 Math Tools - All rights reserved</p>
+                    <p>A comprehensive mathematical learning platform</p>
+                    <p>Version 1.0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add new Assignments Section before the Home Section -->
+        <div id="assignments" class="content-section">
+            <div class="card">
+                <div class="card-body">
+                    <div class="assignment-controls mb-3">
+                        <select id="assignmentSet" class="form-select" onchange="loadAssignment()">
+                            <option value="">Select Question Paper Set</option>
+                            
+                            <!-- Basic Arithmetic -->
+                            <optgroup label="Basic Arithmetic">
+                                <option value="set1">Basic Arithmetic - Easy</option>
+                                <option value="set2">Basic Arithmetic - Medium</option>
+                                <option value="set3">Basic Arithmetic - Hard</option>
+                            </optgroup>
+                            
+                            <!-- Squares -->
+                            <optgroup label="Squares">
+                                <option value="set4">Squares - Easy</option>
+                                <option value="set5">Squares - Medium</option>
+                                <option value="set6">Squares - Hard</option>
+                            </optgroup>
+                            
+                            <!-- Square Roots -->
+                            <optgroup label="Square Roots">
+                                <option value="set7">Square Roots - Easy</option>
+                                <option value="set8">Square Roots - Medium</option>
+                                <option value="set9">Square Roots - Hard</option>
+                            </optgroup>
+                            
+                            <!-- Cubes -->
+                            <optgroup label="Cubes">
+                                <option value="set10">Cubes - Easy</option>
+                                <option value="set11">Cubes - Medium</option>
+                                <option value="set12">Cubes - Hard</option>
+                            </optgroup>
+                            
+                            <!-- Cube Roots -->
+                            <optgroup label="Cube Roots">
+                                <option value="set13">Cube Roots - Easy</option>
+                                <option value="set14">Cube Roots - Medium</option>
+                                <option value="set15">Cube Roots - Hard</option>
+                            </optgroup>
+                        </select>
+                        <button onclick="startAssignment()" class="start-btn btn btn-primary">Start Assignment</button>
+                    </div>
+
+                    <div class="difficulty-indicator alert alert-info">
+                        <span class="difficulty-label">Difficulty:</span>
+                        <span id="currentDifficulty" class="badge bg-secondary">Not Selected</span>
+                    </div>
+
+                    <div id="questionContainer" class="question-container card">
+                        <div class="card-body">
+                            <div class="question-header">
+                                <span class="question-difficulty badge" id="questionDifficulty"></span>
+                                <span class="question-number" id="questionNumber"></span>
+                            </div>
+                            <p class="card-text" id="questionText">Select a question paper set to begin...</p>
+                            <div class="options row g-2" id="optionsContainer">
+                                <!-- Options will be dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="resultsContainer" class="results-container card" style="display: none;">
+                        <div class="card-body">
+                            <h3 class="card-title text-center mb-4">Assignment Results</h3>
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4">
+                                    <div class="p-3 border rounded">
+                                        <h5>Score</h5>
+                                        <div id="scoreValue">0</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 border rounded">
+                                        <h5>Percentage</h5>
+                                        <div id="percentageValue">0%</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 border rounded">
+                                        <h5>Time Taken</h5>
+                                        <div id="timeTaken">0:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-actions d-flex justify-content-center gap-2">
+                                <button onclick="retryAssignment()" class="retry-btn btn btn-primary">Try Again</button>
+                                <button onclick="shareResults()" class="share-btn btn btn-success">Share Results</button>
+                                <button onclick="downloadCertificate()" class="certificate-btn btn btn-warning">Download Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Calculators Section -->
-    <div id="calculators" class="content-section active">
-        <div class="calculator-group">
-            <!-- Basic Arithmetic Calculator -->
-            <div class="calculator">
-                <h3>Basic Arithmetic Calculator</h3>
-                <div class="input-group">
-                    <input type="number" id="num1" placeholder="First number">
-                    <input type="number" id="num2" placeholder="Second number">
-                </div>
-                <div class="button-group">
-                    <button onclick="calculate('add')" class="operation-btn">+</button>
-                    <button onclick="calculate('subtract')" class="operation-btn">-</button>
-                    <button onclick="calculate('multiply')" class="operation-btn">×</button>
-                    <button onclick="calculate('divide')" class="operation-btn">÷</button>
-                </div>
-                <div id="basicResult" class="result-box"></div>
-            </div>
-
-            <!-- Multiplication Table Calculator -->
-            <div class="calculator">
-                <h3>Table Generator</h3>
-                <input type="number" id="numberInput" placeholder="Enter a number">
-                <button onclick="generateTable()">Generate Table</button>
-                <button onclick="clearCalculator()" style="background-color: #ff4444; margin-top: 10px;">Clear</button>
-            </div>
-
-            <!-- Square Calculator -->
-            <div class="calculator">
-                <h3>Square Calculator</h3>
-                <input type="number" id="squareInput" placeholder="Enter a number">
-                <button onclick="calculateSquare()">Calculate Square</button>
-                <div id="squareResult" class="result-box"></div>
-            </div>
-
-            <!-- Square Root Calcu lator -->
-            <div class="calculator">
-                <h3>Square Root Calculator</h3>
-                <input type="number" id="rootInput" placeholder="Enter a number">
-                <button onclick="calculateRoot()">Calculate Square Root</button>
-                <div id="rootResult" class="result-box"></div>
-            </div>
-
-            <!-- New Cube Calculator -->
-            <div class="calculator">
-                <h3>Cube Calculator</h3>
-                <input type="number" id="cubeInput" placeholder="Enter a number">
-                <button onclick="calculateCube()">Calculate Cube</button>
-                <div id="cubeResult" class="result-box"></div>
-            </div>
-
-            <!-- New Cube Root Calculator -->
-            <div class="calculator">
-                <h3>Cube Root Calculator</h3>
-                <input type="number" id="cubeRootInput" placeholder="Enter a number">
-                <button onclick="calculateCubeRoot()">Calculate Cube Root</button>
-                <div id="cubeRootResult" class="result-box"></div>
-            </div>
-        </div>
-        <table id="resultTable" border="1"></table>
-    </div>
-
-    <!-- Tables 2-10 Section -->
-    <div id="tables2to10" class="content-section">
-        <table border="1">
-            <tr>
-              <th>2's Table</th>
-              <th>3's Table</th>
-              <th>4's Table</th>
-              <th>5's Table</th>
-              <th>6's Table</th>
-              <th>7's Table</th>
-              <th>8's Table</th>
-              <th>9's Table</th>
-              <th>10's Table</th>
-            </tr>
-            <tr>
-              <td>2 x 1 = 2</td>
-              <td>3 x 1 = 3</td>
-              <td>4 x 1 = 4</td>
-              <td>5 x 1 = 5</td>
-              <td>6 x 1 = 6</td>
-              <td>7 x 1 = 7</td>
-              <td>8 x 1 = 8</td>
-              <td>9 x 1 = 9</td>
-              <td>10 x 1 = 10</td>
-            </tr>
-            <tr>
-              <td>2 x 2 = 4</td>
-              <td>3 x 2 = 6</td>
-              <td>4 x 2 = 8</td>
-              <td>5 x 2 = 10</td>
-              <td>6 x 2 = 12</td>
-              <td>7 x 2 = 14</td>
-              <td>8 x 2 = 16</td>
-              <td>9 x 2 = 18</td>
-              <td>10 x 2 = 20</td>
-            </tr>
-            <tr>
-              <td>2 x 3 = 6</td>
-              <td>3 x 3 = 9</td>
-              <td>4 x 3 = 12</td>
-              <td>5 x 3 = 15</td>
-              <td>6 x 3 = 18</td>
-              <td>7 x 3 = 21</td>
-              <td>8 x 3 = 24</td>
-              <td>9 x 3 = 27</td>
-              <td>10 x 3 = 30</td>
-            </tr>
-            <tr>
-              <td>2 x 4 = 8</td>
-              <td>3 x 4 = 12</td>
-              <td>4 x 4 = 16</td>
-              <td>5 x 4 = 20</td>
-              <td>6 x 4 = 24</td>
-              <td>7 x 4 = 28</td>
-              <td>8 x 4 = 32</td>
-              <td>9 x 4 = 36</td>
-              <td>10 x 4 = 40</td>
-            </tr>
-            <tr>
-              <td>2 x 5 = 10</td>
-              <td>3 x 5 = 15</td>
-              <td>4 x 5 = 20</td>
-              <td>5 x 5 = 25</td>
-              <td>6 x 5 = 30</td>
-              <td>7 x 5 = 35</td>
-              <td>8 x 5 = 40</td>
-              <td>9 x 5 = 45</td>
-              <td>10 x 5 = 50</td>
-            </tr>
-            <tr>
-              <td>2 x 6 = 12</td>
-              <td>3 x 6 = 18</td>
-              <td>4 x 6 = 24</td>
-              <td>5 x 6 = 30</td>
-              <td>6 x 6 = 36</td>
-              <td>7 x 6 = 42</td>
-              <td>8 x 6 = 48</td>
-              <td>9 x 6 = 54</td>
-              <td>10 x 6 = 60</td>
-            </tr>
-            <tr>
-              <td>2 x 7 = 14</td>
-              <td>3 x 7 = 21</td>
-              <td>4 x 7 = 28</td>
-              <td>5 x 7 = 35</td>
-              <td>6 x 7 = 42</td>
-              <td>7 x 7 = 49</td>
-              <td>8 x 7 = 56</td>
-              <td>9 x 7 = 63</td>
-              <td>10 x 7 = 70</td>
-            </tr>
-            <tr>
-              <td>2 x 8 = 16</td>
-              <td>3 x 8 = 24</td>
-              <td>4 x 8 = 32</td>
-              <td>5 x 8 = 40</td>
-              <td>6 x 8 = 48</td>
-              <td>7 x 8 = 56</td>
-              <td>8 x 8 = 64</td>
-              <td>9 x 8 = 72</td>
-              <td>10 x 8 = 80</td>
-            </tr>
-            <tr>
-              <td>2 x 9 = 18</td>
-              <td>3 x 9 = 27</td>
-              <td>4 x 9 = 36</td>
-              <td>5 x 9 = 45</td>
-              <td>6 x 9 = 54</td>
-              <td>7 x 9 = 63</td>
-              <td>8 x 9 = 72</td>
-              <td>9 x 9 = 81</td>
-              <td>10 x 9 = 90</td>
-            </tr>
-            <tr>
-              <td>2 x 10 = 20</td>
-              <td>3 x 10 = 30</td>
-              <td>4 x 10 = 40</td>
-              <td>5 x 10 = 50</td>
-              <td>6 x 10 = 60</td>
-              <td>7 x 10 = 70</td>
-              <td>8 x 10 = 80</td>
-              <td>9 x 10 = 90</td>
-              <td>10 x 10 = 100</td>
-            </tr>
-          </table>
-    </div>
-
-    <!-- Tables 11-20 Section -->
-    <div id="tables11to20" class="content-section">
-        <table border="2">
-            <tr>
-                <th>11's Table</th>
-                <th>12's Table</th>
-                <th>13's Table</th>
-                <th>14's Table</th>
-                <th>15's Table</th>
-                <th>16's Table</th>
-                <th>17's Table</th>
-                <th>18's Table</th>
-                <th>19's Table</th>
-                <th>20's Table</th>
-              </tr>
-            <tr>
-              <td>11 x 1 = 11</td>
-              <td>12 x 1 = 12</td>
-              <td>13 x 1 = 13</td>
-              <td>14 x 1 = 14</td>
-              <td>15 x 1 = 15</td>
-              <td>16 x 1 = 16</td>
-              <td>17 x 1 = 17</td>
-              <td>18 x 1 = 18</td>
-              <td>19 x 1 = 19</td>
-              <td>20 x 1 = 20</td>
-            </tr>
-            <tr>
-              <td>11 x 2 = 22</td>
-              <td>12 x 2 = 24</td>
-              <td>13 x 2 = 26</td>
-              <td>14 x 2 = 28</td>
-              <td>15 x 2 = 30</td>
-              <td>16 x 2 = 32</td>
-              <td>17 x 2 = 34</td>
-              <td>18 x 2 = 36</td>
-              <td>19 x 2 = 38</td>
-              <td>20 x 2 = 40</td>
-            </tr>
-            <tr>
-              <td>11 x 3 = 33</td>
-              <td>12 x 3 = 36</td>
-              <td>13 x 3 = 39</td>
-              <td>14 x 3 = 42</td>
-              <td>15 x 3 = 45</td>
-              <td>16 x 3 = 48</td>
-              <td>17 x 3 = 51</td>
-              <td>18 x 3 = 54</td>
-              <td>19 x 3 = 57</td>
-              <td>20 x 3 = 60</td>
-            </tr>
-            <tr>
-              <td>11 x 4 = 44</td>
-              <td>12 x 4 = 48</td>
-              <td>13 x 4 = 52</td>
-              <td>14 x 4 = 56</td>
-              <td>15 x 4 = 60</td>
-              <td>16 x 4 = 64</td>
-              <td>17 x 4 = 68</td>
-              <td>18 x 4 = 72</td>
-              <td>19 x 4 = 76</td>
-              <td>20 x 4 = 80</td>
-            </tr>
-            <tr>
-              <td>11 x 5 = 55</td>
-              <td>12 x 5 = 60</td>
-              <td>13 x 5 = 65</td>
-              <td>14 x 5 = 70</td>
-              <td>15 x 5 = 75</td>
-              <td>16 x 5 = 80</td>
-              <td>17 x 5 = 85</td>
-              <td>18 x 5 = 90</td>
-              <td>19 x 5 = 95</td>
-              <td>20 x 5 = 100</td>
-            </tr>
-            <tr>
-              <td>11 x 6 = 66</td>
-              <td>12 x 6 = 72</td>
-              <td>13 x 6 = 78</td>
-              <td>14 x 6 = 84</td>
-              <td>15 x 6 = 90</td>
-              <td>16 x 6 = 96</td>
-              <td>17 x 6 = 102</td>
-              <td>18 x 6 = 108</td>
-              <td>19 x 6 = 114</td>
-              <td>20 x 6 = 120</td>
-            </tr>
-            <tr>
-              <td>11 x 7 = 77</td>
-              <td>12 x 7 = 84</td>
-              <td>13 x 7 = 91</td>
-              <td>14 x 7 = 98</td>
-              <td>15 x 7 = 105</td>
-              <td>16 x 7 = 112</td>
-              <td>17 x 7 = 119</td>
-              <td>18 x 7 = 126</td>
-              <td>19 x 7 = 133</td>
-              <td>20 x 7 = 140</td>
-            </tr>
-            <tr>
-              <td>11 x 8 = 88</td>
-              <td>12 x 8 = 96</td>
-              <td>13 x 8 = 104</td>
-              <td>14 x 8 = 112</td>
-              <td>15 x 8 = 120</td>
-              <td>16 x 8 = 128</td>
-              <td>17 x 8 = 136</td>
-              <td>18 x 8 = 144</td>
-              <td>19 x 8 = 152</td>
-              <td>20 x 8 = 160</td>
-            </tr>
-            <tr>
-              <td>11 x 9 = 99</td>
-              <td>12 x 9 = 108</td>
-              <td>13 x 9 = 117</td>
-              <td>14 x 9 = 126</td>
-              <td>15 x 9 = 135</td>
-              <td>16 x 9 = 144</td>
-              <td>17 x 9 = 153</td>
-              <td>18 x 9 = 162</td>
-              <td>19 x 9 = 171</td>
-              <td>20 x 9 = 180</td>
-            </tr>
-            <tr>
-              <td>11 x 10 = 110</td>
-              <td>12 x 10 = 120</td>
-              <td>13 x 10 = 130</td>
-              <td>14 x 10 = 140</td>
-              <td>15 x 10 = 150</td>
-              <td>16 x 10 = 160</td>
-              <td>17 x 10 = 170</td>
-              <td>18 x 10 = 180</td>
-              <td>19 x 10 = 190</td>
-              <td>20 x 10 = 200</td>
-            </tr>
-          </table>
-    </div>
-
-    <!-- Tables 21-30 Section -->
-    <div id="tables21to30" class="content-section">
-        <table border="3">
-            <tr>
-                <th>21's Table</th>
-                <th>22's Table</th>
-                <th>23's Table</th>
-                <th>24's Table</th>
-                <th>25's Table</th>
-                <th>26's Table</th>
-                <th>27's Table</th>
-                <th>28's Table</th>
-                <th>29's Table</th>
-                <th>30's Table</th>
-            </tr>
-            <tr>
-              <td>21 x 1 = 21</td>
-              <td>22 x 1 = 22</td>
-              <td>23 x 1 = 23</td>
-              <td>24 x 1 = 24</td>
-              <td>25 x 1 = 25</td>
-              <td>26 x 1 = 26</td>
-              <td>27 x 1 = 27</td>
-              <td>28 x 1 = 28</td>
-              <td>29 x 1 = 29</td>
-              <td>30 x 1 = 30</td>
-            </tr>
-            <tr>
-              <td>21 x 2 = 42</td>
-              <td>22 x 2 = 44</td>
-              <td>23 x 2 = 46</td>
-              <td>24 x 2 = 48</td>
-              <td>25 x 2 = 50</td>
-              <td>26 x 2 = 52</td>
-              <td>27 x 2 = 54</td>
-              <td>28 x 2 = 56</td>
-              <td>29 x 2 = 58</td>
-              <td>30 x 2 = 60</td>
-            </tr>
-            <tr>
-              <td>21 x 3 = 63</td>
-              <td>22 x 3 = 66</td>
-              <td>23 x 3 = 69</td>
-              <td>24 x 3 = 72</td>
-              <td>25 x 3 = 75</td>
-              <td>26 x 3 = 78</td>
-              <td>27 x 3 = 81</td>
-              <td>28 x 3 = 84</td>
-              <td>29 x 3 = 87</td>
-              <td>30 x 3 = 90</td>
-            </tr>
-            <tr>
-              <td>21 x 4 = 84</td>
-              <td>22 x 4 = 88</td>
-              <td>23 x 4 = 92</td>
-              <td>24 x 4 = 96</td>
-              <td>25 x 4 = 100</td>
-              <td>26 x 4 = 104</td>
-              <td>27 x 4 = 108</td>
-              <td>28 x 4 = 112</td>
-              <td>29 x 4 = 116</td>
-              <td>30 x 4 = 120</td>
-            </tr>
-            <tr>
-              <td>21 x 5 = 105</td>
-              <td>22 x 5 = 110</td>
-              <td>23 x 5 = 115</td>
-              <td>24 x 5 = 120</td>
-              <td>25 x 5 = 125</td>
-              <td>26 x 5 = 130</td>
-              <td>27 x 5 = 135</td>
-              <td>28 x 5 = 140</td>
-              <td>29 x 5 = 145</td>
-              <td>30 x 5 = 150</td>
-            </tr>
-            <tr>
-              <td>21 x 6 = 126</td>
-              <td>22 x 6 = 132</td>
-              <td>23 x 6 = 138</td>
-              <td>24 x 6 = 144</td>
-              <td>25 x 6 = 150</td>
-              <td>26 x 6 = 156</td>
-              <td>27 x 6 = 162</td>
-              <td>28 x 6 = 168</td>
-              <td>29 x 6 = 174</td>
-              <td>30 x 6 = 180</td>
-            </tr>
-            <tr>
-              <td>21 x 7 = 147</td>
-              <td>22 x 7 = 154</td>
-              <td>23 x 7 = 161</td>
-              <td>24 x 7 = 168</td>
-              <td>25 x 7 = 175</td>
-              <td>26 x 7 = 182</td>
-              <td>27 x 7 = 189</td>
-              <td>28 x 7 = 196</td>
-              <td>29 x 7 = 203</td>
-              <td>30 x 7 = 210</td>
-            </tr>
-            <tr>
-              <td>21 x 8 = 168</td>
-              <td>22 x 8 = 176</td>
-              <td>23 x 8 = 184</td>
-              <td>24 x 8 = 192</td>
-              <td>25 x 8 = 200</td>
-              <td>26 x 8 = 208</td>
-              <td>27 x 8 = 216</td>
-              <td>28 x 8 = 224</td>
-              <td>29 x 8 = 232</td>
-              <td>30 x 8 = 240</td>
-            </tr>
-            <tr>
-              <td>21 x 9 = 189</td>
-              <td>22 x 9 = 198</td>
-              <td>23 x 9 = 207</td>
-              <td>24 x 9 = 216</td>
-              <td>25 x 9 = 225</td>
-              <td>26 x 9 = 234</td>
-              <td>27 x 9 = 243</td>
-              <td>28 x 9 = 252</td>
-              <td>29 x 9 = 261</td>
-              <td>30 x 9 = 270</td>
-            </tr>
-            <tr>
-              <td>21 x 10 = 210</td>
-              <td>22 x 10 = 220</td>
-              <td>23 x 10 = 230</td>
-              <td>24 x 10 = 240</td>
-              <td>25 x 10 = 250</td>
-              <td>26 x 10 = 260</td>
-              <td>27 x 10 = 270</td>
-              <td>28 x 10 = 280</td>
-              <td>29 x 10 = 290</td>
-              <td>30 x 10 = 300</td>
-            </tr>
-          </table>
-    </div>
-
-    <!-- Home Section -->
-    <div id="home" class="content-section active">
-        <div class="home-section">
-            <h1 class="welcome-message">Welcome to Math Tools</h1>
-            <p class="subtitle">Your comprehensive mathematical companion for calculations and learning</p>
-
-            <!-- Stats Section -->
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-number">30+</div>
-                    <p>Multiplication Tables</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">6</div>
-                    <p>Calculator Tools</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <p>Free Access</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="userCount">0</div>
-                    <p>Active Users</p>
-                </div>
-            </div>
-
-            <!-- Feature Cards -->
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧮</div>
-                    <h3>Smart Calculators</h3>
-                    <p>Access our suite of calculators including multiplication table generator, square calculator, and square root finder. Get instant, accurate results for all your mathematical needs.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Multiplication Tables</h3>
-                    <p>Explore comprehensive multiplication tables from 2 to 30, organized in easy-to-read sections. Perfect for learning and quick reference.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Interactive Learning</h3>
-                    <p>Engage with our interactive interface designed for both students and teachers. Practice multiplication, squares, and square roots with instant feedback.</p>
-                </div>
-            </div>
-
-            <!-- How It Works Section -->
-            <div class="how-it-works">
-                <h2>How It Works</h2>
-                <div class="steps-container">
-                    <div class="step-card">
-                        <div class="step-number">Step 1</div>
-                        <h3>Choose Your Tool</h3>
-                        <p>Select from our range of calculators or multiplication tables based on your needs.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">Step 2</div>
-                        <h3>Enter Numbers</h3>
-                        <p>Input your numbers into the calculator or browse through our pre-generated tables.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">Step 3</div>
-                        <h3>Get Results</h3>
-                        <p>Receive instant, accurate results and calculations in a clear, easy-to-read format.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonials Section -->
-            <div class="testimonials">
-                <h2>What Our Users Say</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"This tool has made teaching multiplication tables so much easier. My students love using it!"</p>
-                        <p class="testimonial-author">- Sarah, Math Teacher</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"The calculators are fast and accurate. Perfect for checking my homework!"</p>
-                        <p class="testimonial-author">- Mike, Student</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"A great resource for both learning and teaching. The interface is very user-friendly."</p>
-                        <p class="testimonial-author">- John, Parent</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action Section -->
-            <div class="cta-section">
-                <h2>Ready to Start Learning?</h2>
-                <p>Try our calculators and explore multiplication tables now!</p>
-                <button class="cta-button" onclick="showSection('calculators')">Get Started</button>
-            </div>
-
-            <!-- Quick Start Section -->
-            <div class="quick-start">
-                <h2>Quick Access</h2>
-                <div class="quick-links">
-                    <button class="quick-link-button" onclick="showSection('calculators')">Try Calculators</button>
-                    <button class="quick-link-button" onclick="showSection('tables2to10')">View Tables 2-10</button>
-                    <button class="quick-link-button" onclick="showSection('tables11to20')">View Tables 11-20</button>
-                </div>
-            </div>
-
-            <div class="footer">
-                <p>© 2024 Math Tools - All rights reserved</p>
-                <p>A comprehensive mathematical learning platform</p>
-                <p>Version 1.0</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add new Assignments Section before the Home Section -->
-    <div id="assignments" class="content-section">
-        <div class="assignments-container">
-            <h2>Math Assignments</h2>
-            
-            <!-- Assignment Selection -->
-            <div class="assignment-controls">
-                <select id="assignmentSet" onchange="loadAssignment()">
-                    <option value="">Select Question Paper Set</option>
-                    <option value="set1">Set 1 - Basic Arithmetic</option>
-                    <option value="set2">Set 2 - Multiplication Tables</option>
-                    <option value="set3">Set 3 - Square & Cube</option>
-                    <option value="set4">Set 4 - Word Problems</option>
-                    <option value="set5">Set 5 - Mixed Operations</option>
-                    <option value="set6">Set 6 - Mental Math</option>
-                    <option value="set7">Set 7 - Decimal Operations</option>
-                    <option value="set8">Set 8 - Fraction Problems</option>
-                    <option value="set9">Set 9 - Geometry Basics</option>
-                    <option value="set10">Set 10 - Challenge Questions</option>
-                </select>
-                <button onclick="startAssignment()" class="start-btn">Start Assignment</button>
-            </div>
-
-            <!-- Timer and Progress -->
-            <div class="assignment-status">
-                <div class="timer" id="assignmentTimer">Time: 00:00</div>
-                <div class="progress">
-                    Questions: <span id="currentQuestion">0</span>/10
-                </div>
-            </div>
-
-            <!-- Question Display -->
-            <div id="questionContainer" class="question-container">
-                <div class="question-box">
-                    <p id="questionText">Select a question paper set to begin...</p>
-                    <div class="options" id="optionsContainer">
-                        <!-- Options will be dynamically populated -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results Section -->
-            <div id="resultsContainer" class="results-container" style="display: none;">
-                <h3>Assignment Results</h3>
-                <div class="score-display">
-                    <div class="score">Score: <span id="scoreValue">0</span>/10</div>
-                    <div class="percentage">Percentage: <span id="percentageValue">0</span>%</div>
-                    <div class="time-taken">Time Taken: <span id="timeTaken">0:00</span></div>
-                </div>
-                
-                <!-- Question Review -->
-                <div class="question-review">
-                    <h4>Question Review</h4>
-                    <div id="reviewContainer">
-                        <!-- Will be populated with question review -->
-                    </div>
-                </div>
-
-                <!-- Results Actions -->
-                <div class="result-actions">
-                    <button onclick="retryAssignment()" class="retry-btn">Try Again</button>
-                    <button onclick="shareResults()" class="share-btn">Share Results</button>
-                    <button onclick="downloadCertificate()" class="certificate-btn">Download Certificate</button>
-                </div>
-            </div>
-
-            <!-- Performance Analytics -->
-            <div class="analytics-section">
-                <h3>Performance Analytics</h3>
-                <div class="analytics-grid">
-                    <div class="analytics-card">
-                        <h4>Average Score</h4>
-                        <div id="avgScore">-</div>
-                    </div>
-                    <div class="analytics-card">
-                        <h4>Completed Assignments</h4>
-                        <div id="completedCount">0</div>
-                    </div>
-                    <div class="analytics-card">
-                        <h4>Best Score</h4>
-                        <div id="bestScore">-</div>
-                    </div>
-                    <div class="analytics-card">
-                        <h4>Time Spent</h4>
-                        <div id="totalTime">0 mins</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Parent/Teacher View -->
-            
-        </div>
-    </div>
+    <!-- Add Bootstrap JavaScript and its dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
+<style>
+    .difficulty-indicator {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .difficulty-label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .difficulty-value {
+        padding: 3px 8px;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+
+    .difficulty-value[data-difficulty="Easy"] {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .difficulty-value[data-difficulty="Medium"] {
+        background-color: #ffc107;
+        color: black;
+    }
+
+    .difficulty-value[data-difficulty="Hard"] {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .question-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .question-difficulty {
+        padding: 3px 8px;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+
+    .question-number {
+        font-weight: bold;
+    }
+
+    optgroup {
+        font-weight: bold;
+        color: #009879;
+    }
+
+    option {
+        padding: 5px;
+        color: #333;
+    }
+</style>
 </html>
