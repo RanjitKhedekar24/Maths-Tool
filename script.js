@@ -339,269 +339,414 @@ function animateUserCount() {
 }
 
 const questionSets = {
-    set1: [ // Labor Time Calculations
+    set1: [ // Basic Arithmetic - Easy
         {
-            question: "If 8 workers complete a job in 6 days, how many days will 12 workers take?",
-            options: ["4", "5", "3", "7"],
+            question: "What is 15 + 27?",
+            options: ["42", "41", "43", "40"],
+            correct: "42"
+        },
+        {
+            question: "Calculate 56 - 19",
+            options: ["37", "38", "36", "35"],
+            correct: "37"
+        },
+        {
+            question: "Multiply 8 × 7",
+            options: ["56", "54", "58", "55"],
+            correct: "56"
+        },
+        {
+            question: "Divide 72 ÷ 9",
+            options: ["8", "9", "7", "10"],
+            correct: "8"
+        },
+        {
+            question: "What is 125 + 75?",
+            options: ["200", "195", "205", "190"],
+            correct: "200"
+        }
+    ],
+    set2: [ // Basic Arithmetic - Medium
+        {
+            question: "Calculate 234 + 567",
+            options: ["801", "799", "802", "800"],
+            correct: "801"
+        },
+        {
+            question: "What is 456 - 189?",
+            options: ["267", "268", "266", "265"],
+            correct: "267"
+        },
+        {
+            question: "Multiply 16 × 25",
+            options: ["400", "375", "425", "450"],
+            correct: "400"
+        },
+        {
+            question: "Divide 728 ÷ 8",
+            options: ["91", "90", "92", "89"],
+            correct: "91"
+        },
+        {
+            question: "Calculate 645 + 789",
+            options: ["1434", "1432", "1436", "1430"],
+            correct: "1434"
+        }
+    ],
+    set3: [ // Basic Arithmetic - Hard
+        {
+            question: "Calculate 1567 + 2389",
+            options: ["3956", "3955", "3957", "3954"],
+            correct: "3956"
+        },
+        {
+            question: "What is 4567 - 1789?",
+            options: ["2778", "2777", "2779", "2776"],
+            correct: "2778"
+        },
+        {
+            question: "Multiply 156 × 24",
+            options: ["3744", "3742", "3746", "3740"],
+            correct: "3744"
+        },
+        {
+            question: "Divide 9856 ÷ 16",
+            options: ["616", "615", "617", "614"],
+            correct: "616"
+        },
+        {
+            question: "Calculate 3456 + 5678",
+            options: ["9134", "9132", "9136", "9130"],
+            correct: "9134"
+        }
+    ],
+    set4: [ // Squares - Easy
+        {
+            question: "What is 6²?",
+            options: ["36", "35", "37", "34"],
+            correct: "36"
+        },
+        {
+            question: "Calculate 8²",
+            options: ["64", "63", "65", "62"],
+            correct: "64"
+        },
+        {
+            question: "What is 9²?",
+            options: ["81", "80", "82", "79"],
+            correct: "81"
+        },
+        {
+            question: "Calculate 7²",
+            options: ["49", "48", "50", "47"],
+            correct: "49"
+        },
+        {
+            question: "What is 5²?",
+            options: ["25", "24", "26", "23"],
+            correct: "25"
+        }
+    ],
+    set5: [ // Squares - Medium
+        {
+            question: "Calculate 12²",
+            options: ["144", "143", "145", "142"],
+            correct: "144"
+        },
+        {
+            question: "What is 15²?",
+            options: ["225", "224", "226", "223"],
+            correct: "225"
+        },
+        {
+            question: "Calculate 13²",
+            options: ["169", "168", "170", "167"],
+            correct: "169"
+        },
+        {
+            question: "What is 14²?",
+            options: ["196", "195", "197", "194"],
+            correct: "196"
+        },
+        {
+            question: "Calculate 11²",
+            options: ["121", "120", "122", "119"],
+            correct: "121"
+        }
+    ],
+    set6: [ // Squares - Hard
+        {
+            question: "Calculate 25²",
+            options: ["625", "624", "626", "623"],
+            correct: "625"
+        },
+        {
+            question: "What is 18²?",
+            options: ["324", "323", "325", "322"],
+            correct: "324"
+        },
+        {
+            question: "Calculate 20²",
+            options: ["400", "399", "401", "398"],
+            correct: "400"
+        },
+        {
+            question: "What is 16²?",
+            options: ["256", "255", "257", "254"],
+            correct: "256"
+        },
+        {
+            question: "Calculate 22²",
+            options: ["484", "483", "485", "482"],
+            correct: "484"
+        }
+    ],
+    set7: [ // Square Roots - Easy
+        {
+            question: "What is √16?",
+            options: ["4", "3", "5", "6"],
             correct: "4"
         },
         {
-            question: "A worker completes 40 units in 8 hours. How many units per hour?",
+            question: "Calculate √25",
             options: ["5", "4", "6", "7"],
             correct: "5"
         },
         {
-            question: "If 15 workers need 10 days, how many workers needed to complete in 6 days?",
-            options: ["25", "20", "30", "35"],
-            correct: "25"
-        },
-        {
-            question: "A machine produces 120 items per hour. Production in 7.5 hours?",
-            options: ["900", "850", "950", "1000"],
-            correct: "900"
-        },
-        {
-            question: "If 6 workers take 7 days, how many days will 14 workers take?",
-            options: ["3", "4", "5", "2"],
+            question: "What is √9?",
+            options: ["3", "2", "4", "5"],
             correct: "3"
         },
         {
-            question: "20 workers complete 40% in 10 days. Days needed for full completion?",
-            options: ["25", "20", "30", "35"],
-            correct: "25"
-        },
-        {
-            question: "If 12 workers need 10 days working 6 hours daily, days needed for 8 hours daily?",
-            options: ["7.5", "8", "7", "6.5"],
-            correct: "7.5"
-        },
-        {
-            question: "A worker makes 15 units/hour. Units in 6.5 hours?",
-            options: ["97.5", "95", "100", "90"],
-            correct: "97.5"
-        },
-        {
-            question: "5 workers take 12 days. Days needed for 10 workers?",
-            options: ["6", "7", "5", "8"],
+            question: "Calculate √36",
+            options: ["6", "5", "7", "8"],
             correct: "6"
         },
         {
-            question: "If 25 workers complete in 20 days, workers needed for 25 days?",
-            options: ["20", "18", "22", "24"],
-            correct: "20"
+            question: "What is √49?",
+            options: ["7", "6", "8", "9"],
+            correct: "7"
         }
     ],
-    set2: [ // Wage Calculations
+    set8: [ // Square Roots - Medium
         {
-            question: "At $15/hour, earnings for 45 hours?",
-            options: ["$675", "$650", "$700", "$725"],
-            correct: "$675"
-        },
-        {
-            question: "Weekly salary $800. Hourly rate for 40-hour week?",
-            options: ["$20", "$18", "$22", "$24"],
-            correct: "$20"
-        },
-        {
-            question: "Overtime (1.5×) for 10 hours at $20 base rate?",
-            options: ["$300", "$250", "$350", "$400"],
-            correct: "$300"
-        },
-        {
-            question: "Monthly salary $3600. Annual salary?",
-            options: ["$43200", "$42000", "$44000", "$45000"],
-            correct: "$43200"
-        },
-        {
-            question: "If daily wage is $160 for 8 hours, hourly rate?",
-            options: ["$20", "$18", "$22", "$24"],
-            correct: "$20"
-        },
-        {
-            question: "Team of 12 at $25/hour for 6 hours. Total cost?",
-            options: ["$1800", "$1750", "$1850", "$1900"],
-            correct: "$1800"
-        },
-        {
-            question: "Base rate $22, overtime $33. Earnings for 40 regular + 8 overtime hours?",
-            options: ["$1144", "$1140", "$1150", "$1160"],
-            correct: "$1144"
-        },
-        {
-            question: "Annual salary $52000. Monthly salary?",
-            options: ["$4333.33", "$4300", "$4350", "$4400"],
-            correct: "$4333.33"
-        },
-        {
-            question: "Hourly rate $18. Weekly pay for 35 hours?",
-            options: ["$630", "$600", "$650", "$700"],
-            correct: "$630"
-        },
-        {
-            question: "If biweekly pay is $1600, annual salary?",
-            options: ["$41600", "$41000", "$42000", "$40000"],
-            correct: "$41600"
-        }
-    ],
-    set3: [ // Production Efficiency
-        {
-            question: "Machine A: 100 units/hour, Machine B: 150 units/hour. Combined hourly output?",
-            options: ["250", "200", "300", "350"],
-            correct: "250"
-        },
-        {
-            question: "If efficiency increases 25%, new output from base 400 units?",
-            options: ["500", "450", "550", "600"],
-            correct: "500"
-        },
-        {
-            question: "Production drops 20%. New output from 1000 units?",
-            options: ["800", "750", "850", "900"],
-            correct: "800"
-        },
-        {
-            question: "3 workers make 90 units/hour. Units per worker?",
-            options: ["30", "25", "35", "40"],
-            correct: "30"
-        },
-        {
-            question: "If 5 machines make 600 units, units from 8 machines?",
-            options: ["960", "900", "1000", "1100"],
-            correct: "960"
-        },
-        {
-            question: "Team completes 75% in 9 hours. Hours for full job?",
+            question: "Calculate √144",
             options: ["12", "11", "13", "14"],
             correct: "12"
         },
         {
-            question: "Output increases 50%. New workers needed instead of 30?",
-            options: ["20", "18", "22", "24"],
+            question: "What is √169?",
+            options: ["13", "12", "14", "15"],
+            correct: "13"
+        },
+        {
+            question: "Calculate √196",
+            options: ["14", "13", "15", "16"],
+            correct: "14"
+        },
+        {
+            question: "What is √225?",
+            options: ["15", "14", "16", "17"],
+            correct: "15"
+        },
+        {
+            question: "Calculate √256",
+            options: ["16", "15", "17", "18"],
+            correct: "16"
+        }
+    ],
+    set9: [ // Square Roots - Hard
+        {
+            question: "Calculate √289",
+            options: ["17", "16", "18", "19"],
+            correct: "17"
+        },
+        {
+            question: "What is √324?",
+            options: ["18", "17", "19", "20"],
+            correct: "18"
+        },
+        {
+            question: "Calculate √400",
+            options: ["20", "19", "21", "22"],
             correct: "20"
         },
         {
-            question: "Machine makes 40 parts/minute. Parts in 2 hours?",
-            options: ["4800", "4600", "5000", "5200"],
-            correct: "4800"
+            question: "What is √441?",
+            options: ["21", "20", "22", "23"],
+            correct: "21"
         },
         {
-            question: "If 4 workers do 200 units, units from 6 workers?",
-            options: ["300", "250", "350", "400"],
-            correct: "300"
-        },
-        {
-            question: "Production rate 80/hour improves 25%. New hourly rate?",
-            options: ["100", "90", "110", "120"],
-            correct: "100"
+            question: "Calculate √484",
+            options: ["22", "21", "23", "24"],
+            correct: "22"
         }
     ],
-    set4: [ // Resource Management
+    set10: [ // Cubes - Easy
         {
-            question: "Material cost $30/unit, labor $20/unit. Total cost for 200 units?",
-            options: ["$10000", "$9500", "$10500", "$11000"],
-            correct: "$10000"
+            question: "What is 2³?",
+            options: ["8", "6", "10", "12"],
+            correct: "8"
         },
         {
-            question: "Project needs 400 bricks/day. Bricks for 30 days?",
-            options: ["12000", "11000", "13000", "14000"],
-            correct: "12000"
+            question: "Calculate 3³",
+            options: ["27", "24", "30", "33"],
+            correct: "27"
         },
         {
-            question: "10 workers need 3 supervisors. Supervisors for 40 workers?",
-            options: ["12", "10", "14", "16"],
-            correct: "12"
+            question: "What is 4³?",
+            options: ["64", "60", "68", "72"],
+            correct: "64"
         },
         {
-            question: "Machine uses 8 liters/day. Monthly usage (30 days)?",
-            options: ["240", "220", "260", "280"],
-            correct: "240"
+            question: "Calculate 5³",
+            options: ["125", "120", "130", "135"],
+            correct: "125"
         },
         {
-            question: "Wastage is 10%. Material needed for 300 units?",
-            options: ["330", "320", "340", "350"],
-            correct: "330"
+            question: "What is 6³?",
+            options: ["216", "210", "220", "225"],
+            correct: "216"
+        }
+    ],
+    set11: [ // Cubes - Medium
+        {
+            question: "Calculate 7³",
+            options: ["343", "336", "350", "357"],
+            correct: "343"
         },
         {
-            question: "Each worker needs 4 tools. Tools for team of 25?",
-            options: ["100", "90", "110", "120"],
-            correct: "100"
+            question: "What is 8³?",
+            options: ["512", "504", "520", "528"],
+            correct: "512"
         },
         {
-            question: "Paint covers 25 sq.m/liter. Liters for 800 sq.m?",
-            options: ["32", "30", "34", "36"],
-            correct: "32"
+            question: "Calculate 9³",
+            options: ["729", "720", "738", "747"],
+            correct: "729"
         },
         {
-            question: "5 supervisors for 100 workers. Supervisors for 180 workers?",
+            question: "What is 10³?",
+            options: ["1000", "990", "1010", "1020"],
+            correct: "1000"
+        },
+        {
+            question: "Calculate 11³",
+            options: ["1331", "1320", "1342", "1353"],
+            correct: "1331"
+        }
+    ],
+    set12: [ // Cubes - Hard
+        {
+            question: "Calculate 12³",
+            options: ["1728", "1716", "1740", "1752"],
+            correct: "1728"
+        },
+        {
+            question: "What is 13³?",
+            options: ["2197", "2184", "2210", "2223"],
+            correct: "2197"
+        },
+        {
+            question: "Calculate 14³",
+            options: ["2744", "2730", "2758", "2772"],
+            correct: "2744"
+        },
+        {
+            question: "What is 15³?",
+            options: ["3375", "3360", "3390", "3405"],
+            correct: "3375"
+        },
+        {
+            question: "Calculate 16³",
+            options: ["4096", "4080", "4112", "4128"],
+            correct: "4096"
+        }
+    ],
+    set13: [ // Cube Roots - Easy
+        {
+            question: "What is ∛8?",
+            options: ["2", "1", "3", "4"],
+            correct: "2"
+        },
+        {
+            question: "Calculate ∛27",
+            options: ["3", "2", "4", "5"],
+            correct: "3"
+        },
+        {
+            question: "What is ∛64?",
+            options: ["4", "3", "5", "6"],
+            correct: "4"
+        },
+        {
+            question: "Calculate ∛125",
+            options: ["5", "4", "6", "7"],
+            correct: "5"
+        },
+        {
+            question: "What is ∛216?",
+            options: ["6", "5", "7", "8"],
+            correct: "6"
+        }
+    ],
+    set14: [ // Cube Roots - Medium
+        {
+            question: "Calculate ∛343",
+            options: ["7", "6", "8", "9"],
+            correct: "7"
+        },
+        {
+            question: "What is ∛512?",
+            options: ["8", "7", "9", "10"],
+            correct: "8"
+        },
+        {
+            question: "Calculate ∛729",
             options: ["9", "8", "10", "11"],
             correct: "9"
         },
         {
-            question: "Equipment rental $300/day. Cost for 45 days?",
-            options: ["$13500", "$13000", "$14000", "$14500"],
-            correct: "$13500"
+            question: "What is ∛1000?",
+            options: ["10", "9", "11", "12"],
+            correct: "10"
         },
         {
-            question: "Each unit needs 3 hours labor. Hours for 90 units?",
-            options: ["270", "260", "280", "290"],
-            correct: "270"
+            question: "Calculate ∛1331",
+            options: ["11", "10", "12", "13"],
+            correct: "11"
         }
     ],
-    set5: [ // Project Planning
+    set15: [ // Cube Roots - Hard
         {
-            question: "Project: 120 days with 15 workers. Days with 20 workers?",
-            options: ["90", "85", "95", "100"],
-            correct: "90"
+            question: "Calculate ∛1728",
+            options: ["12", "11", "13", "14"],
+            correct: "12"
         },
         {
-            question: "160-day project 30% complete. Days remaining?",
-            options: ["112", "110", "114", "116"],
-            correct: "112"
+            question: "What is ∛2197?",
+            options: ["13", "12", "14", "15"],
+            correct: "13"
         },
         {
-            question: "Speed increases 25%. New time for 80-day project?",
-            options: ["64", "60", "68", "70"],
-            correct: "64"
+            question: "Calculate ∛2744",
+            options: ["14", "13", "15", "16"],
+            correct: "14"
         },
         {
-            question: "Team A: 30 days, Team B: 60 days. Days working together?",
-            options: ["20", "18", "22", "24"],
-            correct: "20"
+            question: "What is ∛3375?",
+            options: ["15", "14", "16", "17"],
+            correct: "15"
         },
         {
-            question: "Project needs 2400 labor hours. Days with 10 workers (8 hours/day)?",
-            options: ["30", "28", "32", "34"],
-            correct: "30"
-        },
-        {
-            question: "Phase 1: 40 days, Phase 2: 60 days. Total with 25% overlap?",
-            options: ["85", "80", "90", "95"],
-            correct: "85"
-        },
-        {
-            question: "If overtime reduces time by 30%, new duration for 100 days?",
-            options: ["70", "65", "75", "80"],
-            correct: "70"
-        },
-        {
-            question: "Project deadline cut 20%. New workers needed instead of 25?",
-            options: ["31.25", "30", "32", "33"],
-            correct: "31.25"
-        },
-        {
-            question: "3 phases: 20, 30, 40 days. Total with no overlap?",
-            options: ["90", "85", "95", "100"],
-            correct: "90"
-        },
-        {
-            question: "50% complete in 40 days. Total project duration?",
-            options: ["80", "75", "85", "90"],
-            correct: "80"
+            question: "Calculate ∛4096",
+            options: ["16", "15", "17", "18"],
+            correct: "16"
         }
     ]
 };
 
-// Add these missing functions for the assignments section
+// Add these functions for the assignment section
 let currentAssignment = {
     questions: [],
     currentIndex: 0,
@@ -615,6 +760,8 @@ function loadAssignment() {
     
     if (selectedSet && questionSets[selectedSet]) {
         currentAssignment.questions = questionSets[selectedSet];
+        currentAssignment.currentIndex = 0;
+        currentAssignment.score = 0;
     }
 }
 
@@ -624,19 +771,10 @@ function startAssignment() {
         return;
     }
 
-    currentAssignment.currentIndex = 0;
-    currentAssignment.score = 0;
     currentAssignment.startTime = new Date();
-
-    // Reset and show question container
+    showQuestion();
     document.getElementById('questionContainer').style.display = 'block';
     document.getElementById('resultsContainer').style.display = 'none';
-
-    // Start timer
-    startTimer();
-
-    // Show first question
-    showQuestion();
 }
 
 function showQuestion() {
@@ -655,7 +793,8 @@ function showQuestion() {
     });
 
     // Update progress
-    document.getElementById('currentQuestion').textContent = currentAssignment.currentIndex + 1;
+    document.getElementById('questionNumber').textContent = 
+        `Question ${currentAssignment.currentIndex + 1} of ${currentAssignment.questions.length}`;
 }
 
 function checkAnswer(selectedAnswer) {
@@ -676,30 +815,16 @@ function checkAnswer(selectedAnswer) {
 
 function showResults() {
     const endTime = new Date();
-    const timeTaken = Math.floor((endTime - currentAssignment.startTime) / 1000); // in seconds
+    const timeTaken = Math.floor((endTime - currentAssignment.startTime) / 1000);
 
     document.getElementById('questionContainer').style.display = 'none';
     document.getElementById('resultsContainer').style.display = 'block';
 
-    // Update score and percentage
+    const percentage = (currentAssignment.score / currentAssignment.questions.length) * 100;
+    
     document.getElementById('scoreValue').textContent = currentAssignment.score;
-    document.getElementById('percentageValue').textContent = 
-        Math.round((currentAssignment.score / currentAssignment.questions.length) * 100);
+    document.getElementById('percentageValue').textContent = Math.round(percentage);
     document.getElementById('timeTaken').textContent = formatTime(timeTaken);
-
-    // Update analytics
-    updateAnalytics();
-}
-
-function startTimer() {
-    const timerElement = document.getElementById('assignmentTimer');
-    const startTime = new Date();
-
-    const timer = setInterval(() => {
-        const currentTime = new Date();
-        const difference = Math.floor((currentTime - startTime) / 1000);
-        timerElement.textContent = `Time: ${formatTime(difference)}`;
-    }, 1000);
 }
 
 function formatTime(seconds) {
@@ -709,7 +834,12 @@ function formatTime(seconds) {
 }
 
 function retryAssignment() {
-    startAssignment();
+    currentAssignment.currentIndex = 0;
+    currentAssignment.score = 0;
+    currentAssignment.startTime = new Date();
+    showQuestion();
+    document.getElementById('questionContainer').style.display = 'block';
+    document.getElementById('resultsContainer').style.display = 'none';
 }
 
 function shareResults() {
