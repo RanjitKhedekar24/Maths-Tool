@@ -443,7 +443,6 @@ const questionSets = {
         },
         {
             question: "What is 5²?",
-            
             options: ["25", "24", "26", "23"],
             correct: "25"
         }
@@ -500,6 +499,249 @@ const questionSets = {
             question: "Calculate 22²",
             options: ["484", "483", "485", "482"],
             correct: "484"
+        }
+    ],
+    set7: [ // Square Roots - Easy
+        {
+            question: "What is √16?",
+            options: ["4", "3", "5", "6"],
+            correct: "4"
+        },
+        {
+            question: "Calculate √25",
+            options: ["5", "4", "6", "7"],
+            correct: "5"
+        },
+        {
+            question: "What is √9?",
+            options: ["3", "2", "4", "5"],
+            correct: "3"
+        },
+        {
+            question: "Calculate √36",
+            options: ["6", "5", "7", "8"],
+            correct: "6"
+        },
+        {
+            question: "What is √49?",
+            options: ["7", "6", "8", "9"],
+            correct: "7"
+        }
+    ],
+    set8: [ // Square Roots - Medium
+        {
+            question: "Calculate √144",
+            options: ["12", "11", "13", "14"],
+            correct: "12"
+        },
+        {
+            question: "What is √169?",
+            options: ["13", "12", "14", "15"],
+            correct: "13"
+        },
+        {
+            question: "Calculate √196",
+            options: ["14", "13", "15", "16"],
+            correct: "14"
+        },
+        {
+            question: "What is √225?",
+            options: ["15", "14", "16", "17"],
+            correct: "15"
+        },
+        {
+            question: "Calculate √256",
+            options: ["16", "15", "17", "18"],
+            correct: "16"
+        }
+    ],
+    set9: [ // Square Roots - Hard
+        {
+            question: "Calculate √289",
+            options: ["17", "16", "18", "19"],
+            correct: "17"
+        },
+        {
+            question: "What is √324?",
+            options: ["18", "17", "19", "20"],
+            correct: "18"
+        },
+        {
+            question: "Calculate √400",
+            options: ["20", "19", "21", "22"],
+            correct: "20"
+        },
+        {
+            question: "What is √441?",
+            options: ["21", "20", "22", "23"],
+            correct: "21"
+        },
+        {
+            question: "Calculate √484",
+            options: ["22", "21", "23", "24"],
+            correct: "22"
+        }
+    ],
+    set10: [ // Cubes - Easy
+        {
+            question: "What is 2³?",
+            options: ["8", "6", "10", "12"],
+            correct: "8"
+        },
+        {
+            question: "Calculate 3³",
+            options: ["27", "24", "30", "33"],
+            correct: "27"
+        },
+        {
+            question: "What is 4³?",
+            options: ["64", "60", "68", "72"],
+            correct: "64"
+        },
+        {
+            question: "Calculate 5³",
+            options: ["125", "120", "130", "135"],
+            correct: "125"
+        },
+        {
+            question: "What is 6³?",
+            options: ["216", "210", "220", "225"],
+            correct: "216"
+        }
+    ],
+    set11: [ // Cubes - Medium
+        {
+            question: "Calculate 7³",
+            options: ["343", "336", "350", "357"],
+            correct: "343"
+        },
+        {
+            question: "What is 8³?",
+            options: ["512", "504", "520", "528"],
+            correct: "512"
+        },
+        {
+            question: "Calculate 9³",
+            options: ["729", "720", "738", "747"],
+            correct: "729"
+        },
+        {
+            question: "What is 10³?",
+            options: ["1000", "990", "1010", "1020"],
+            correct: "1000"
+        },
+        {
+            question: "Calculate 11³",
+            options: ["1331", "1320", "1342", "1353"],
+            correct: "1331"
+        }
+    ],
+    set12: [ // Cubes - Hard
+        {
+            question: "Calculate 12³",
+            options: ["1728", "1716", "1740", "1752"],
+            correct: "1728"
+        },
+        {
+            question: "What is 13³?",
+            options: ["2197", "2184", "2210", "2223"],
+            correct: "2197"
+        },
+        {
+            question: "Calculate 14³",
+            options: ["2744", "2730", "2758", "2772"],
+            correct: "2744"
+        },
+        {
+            question: "What is 15³?",
+            options: ["3375", "3360", "3390", "3405"],
+            correct: "3375"
+        },
+        {
+            question: "Calculate 16³",
+            options: ["4096", "4080", "4112", "4128"],
+            correct: "4096"
+        }
+    ],
+    set13: [ // Cube Roots - Easy
+        {
+            question: "What is ∛8?",
+            options: ["2", "1", "3", "4"],
+            correct: "2"
+        },
+        {
+            question: "Calculate ∛27",
+            options: ["3", "2", "4", "5"],
+            correct: "3"
+        },
+        {
+            question: "What is ∛64?",
+            options: ["4", "3", "5", "6"],
+            correct: "4"
+        },
+        {
+            question: "Calculate ∛125",
+            options: ["5", "4", "6", "7"],
+            correct: "5"
+        },
+        {
+            question: "What is ∛216?",
+            options: ["6", "5", "7", "8"],
+            correct: "6"
+        }
+    ],
+    set14: [ // Cube Roots - Medium
+        {
+            question: "Calculate ∛343",
+            options: ["7", "6", "8", "9"],
+            correct: "7"
+        },
+        {
+            question: "What is ∛512?",
+            options: ["8", "7", "9", "10"],
+            correct: "8"
+        },
+        {
+            question: "Calculate ∛729",
+            options: ["9", "8", "10", "11"],
+            correct: "9"
+        },
+        {
+            question: "What is ∛1000?",
+            options: ["10", "9", "11", "12"],
+            correct: "10"
+        },
+        {
+            question: "Calculate ∛1331",
+            options: ["11", "10", "12", "13"],
+            correct: "11"
+        }
+    ],
+    set15: [ // Cube Roots - Hard
+        {
+            question: "Calculate ∛1728",
+            options: ["12", "11", "13", "14"],
+            correct: "12"
+        },
+        {
+            question: "What is ∛2197?",
+            options: ["13", "12", "14", "15"],
+            correct: "13"
+        },
+        {
+            question: "Calculate ∛2744",
+            options: ["14", "13", "15", "16"],
+            correct: "14"
+        },
+        {
+            question: "What is ∛3375?",
+            options: ["15", "14", "16", "17"],
+            correct: "15"
+        },
+        {
+            question: "Calculate ∛4096",
+            options: ["16", "15", "17", "18"],
+            correct: "16"
         }
     ]
 };
@@ -647,6 +889,84 @@ document.addEventListener('DOMContentLoaded', function() {
     if (startButton) {
         startButton.addEventListener('click', startAssignment);
     }
+
+    // Initialize rating stars functionality
+    const ratingStars = document.querySelectorAll('.rating-stars .fas');
+    const ratingInput = document.getElementById('rating');
+
+    ratingStars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = this.getAttribute('data-rating');
+            ratingInput.value = rating;
+            
+            // Update stars visual state
+            ratingStars.forEach(s => {
+                if (s.getAttribute('data-rating') <= rating) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Form validation
+    const form = document.getElementById('feedbackForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+        } else {
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Prepare form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                rating: document.getElementById('rating').value,
+                feedback: document.getElementById('feedback').value
+            };
+            
+            // Send email using EmailJS
+            emailjs.send(
+                'service_zkq55vn', // Replace with your EmailJS service ID
+                'template_5amxp6o', // Replace with your EmailJS template ID
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    rating: formData.rating,
+                    message: formData.feedback,
+                }
+            ).then(
+                function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Reset form
+                    form.reset();
+                    ratingStars.forEach(s => s.classList.remove('active'));
+                    ratingInput.value = '';
+                    
+                    // Show success message
+                    alert('Thank you for your feedback! We will get back to you soon.');
+                },
+                function(error) {
+                    console.log('FAILED...', error);
+                    alert('Sorry, there was an error sending your feedback. Please try again later.');
+                }
+            ).finally(() => {
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            });
+        }
+        
+        form.classList.add('was-validated');
+    });
 });
 
 // Remove the monitoring-related styles
